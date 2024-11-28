@@ -7,7 +7,9 @@ function App() {
 
   return (
     <main className="h-screen">
-      <section className="min-h-screen 2xl:m-auto 2xl:max-w-[1400px]">
+      <section className="min-h-screen 
+      2xl:m-auto 2xl:max-w-[1400px] 
+      sm:h-full sm:min-h-[600px]">
         <Hero />
       </section>
       <section id="wheel" className="h-screen mt-20">
