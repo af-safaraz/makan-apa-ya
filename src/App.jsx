@@ -6,11 +6,11 @@ function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    <main className="relative h-screen">
-      <section className="h-screen 2xl:m-auto 2xl:max-w-[1400px]">
+    <main className="h-screen">
+      <section className="min-h-screen 2xl:m-auto 2xl:max-w-[1400px]">
         <Hero />
       </section>
-      <section id="wheel" className="h-screen mt-48">
+      <section id="wheel" className="h-screen mt-20">
         <Wheel />
       </section>
     </main>

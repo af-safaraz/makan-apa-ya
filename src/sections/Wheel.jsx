@@ -2,7 +2,7 @@ import Button from '../components/Button'
 
 const Wheel = () => {
     return (
-        <div className="h-full flex flex-col z-10">
+        <div className="h-full flex flex-col">
             <div className="flex-1 flex justify-center items-center">
                 <div className="wheel-container w-[90%] h-[90%] bg-primary"></div>
             </div>
