@@ -3,23 +3,26 @@ import foodWheel from '../assets/images/WheelOfFood.svg'
 
 const Hero = () => {
     return (
-        <div className="h-screen flex flex-col justify-center items-center sm:flex-row sm:min-h-[600px]">
-            <div className="pb-5 h-[60%] flex flex-col justify-end items-center text-center sm:pl-10 sm:pr-3 sm:pb-0 sm:justify-center sm:items-start sm:w-[55%] sm:h-full sm:text-left">
-                <h1 className="font-dela-gothic text-6xl text-primary text-black-border text-black-shadow-sm leading-[1.15] sm:text-7xl sm:text-black-shadow-lg">
+        <div className="flex flex-col justify-center items-center 
+        sm:flex-row sm:h-full">
+            <div className="pb-5 h-[60vh] flex flex-col justify-end items-center text-center 
+            sm:pl-8 lg:pl-10 xl:pl-12 sm:pr-4 sm:pb-0 sm:justify-center sm:items-start sm:w-[55%] sm:text-left sm:h-full">
+                <h1 className="font-dela-gothic text-6xl text-primary text-black-border text-black-shadow-sm leading-[1.15] sm:text-6xl lg:text-7xl sm:text-black-shadow-lg">
                     Makan <span className="xl:inline block">Apa Ya?</span>
                 </h1>
-                <p className="my-7 px-3 font-poppins text-sm text-gray-700 sm:text-lg">
+                <p className="my-7 font-poppins text-sm text-gray-700 sm:text-lg">
                     Bingung mau makan apa?
                     <span className="lg:inline block"> Biarkan kami bantu pilih!</span>
                     <span className="block">Masukkan pilihan makan favoritmu atau pilih dari daftar kami, lalu putar roda untuk mendapatkan jawaban. Mudah, cepat, dan tanpa drama!</span>
                 </p>
                 <Button label="Mulai Sekarang" href="#wheel" />
             </div>
-            <div className="relative h-[40%] flex flex-col w-full pt-5 justify-start items-center sm:pt-0 sm:w-[45%] sm:h-full sm:items-start sm:justify-center">
-                <img src={foodWheel} alt="Wheel of Food" className="absolute w-[120%] max-w-none max-h-none sm:w-[170%] lg:w-[95%] object-cover" />
+            <div className="min-h-[40vh] pt-5 w-full flex flex-col justify-start items-center 
+            sm:pt-0 sm:w-[45%] sm:h-full sm:items-start sm:justify-center overflow-hidden">
+                <img src={foodWheel} alt="Wheel of Food" className="w-[120%] h-[120]% max-w-none max-h-none sm:w-[170%] lg:w-[95%] object-cover" />
             </div>
 
-        </div>
+        </div >
     )
 }
 

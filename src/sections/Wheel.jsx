@@ -1,29 +1,20 @@
-import Button from '../components/Button'
+
+import WheelContainer from '../components/WheelContainer'
+import FoodList from '../components/FoodList'
+import FoodRecommendations from '../components/FoodRecommendations'
+import { useState } from 'react'
 
 const Wheel = () => {
-    return (
-        <div className="h-full flex flex-col z-10">
-            <div className="flex-1 flex justify-center items-center">
-                <div className="wheel-container w-[90%] h-[90%] bg-primary"></div>
-            </div>
-            <div className="flex-1 flex flex-col items-center">
-                <h6 className="font-poppins font-medium text-gray-700">Daftar Makanan:</h6>
-                <textarea id="foodList" name="foodList" rows="6" className="my-3 p-2 w-[80%] font-poppins text-sm text-gray-700 resize-none border border-tertiary-darker rounded-lg bg-tertiary-dark">
-                    Nasi Goreng
-                    Bakso
-                    Sate
-                </textarea>
-                <h6 className="mt-3 font-poppins font-medium text-gray-700">Rekomendasi:</h6>
-                <form action="">
+    const [foodList, setFoodList] = useState("Nasi Goreng\nSoto\nBakso\nSate");
 
-                    <select name="categories" id="categories" className="my-3 py-1 px-3 font-poppins text-sm text-gray-700 border border-tertiary-darker rounded-lg bg-tertiary-dark" >
-                        <label htmlFor="categories">Kategori:</label>
-                        <option value="indonesian">Makanan Indonesia</option>
-                        <option value="korean">Makanan Korea</option>
-                        <option value="japanese">Makanan Jepang</option>
-                    </select>
-                </form>
-                <Button label="Nasi Goreng" />
+    return (
+        <div className="flex flex-col sm:flex-row w-full lg:w-[90%]">
+            <div className="h-[50vh] flex justify-center items-center p-5 sm:w-[50%] sm:h-screen">
+                <WheelContainer />
+            </div>
+            <div className="min-h-[50vh] px-5 flex flex-col items-center sm:w-[50%] sm:items-start sm:p-5">
+                <FoodList foodList={foodList} />
+                <FoodRecommendations />
             </div>
         </div>
     )
