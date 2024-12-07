@@ -14,7 +14,6 @@ const Wheel = () => {
         setFoodList((prev) => prev + "\n" + foodName)
 
     }
-    console.log(foodList)
 
     return (
         <div className="flex flex-col sm:flex-row w-full lg:w-[90%]">

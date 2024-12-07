@@ -1,11 +1,16 @@
 import { Wheel } from '../../node_modules/spin-wheel/dist/spin-wheel-esm.js'
 import { useState, useRef, useEffect } from 'react';
 import WheelPointer from '../assets/images/WheelPointer.svg'
+import useSound from 'use-sound'
+import SpinSound from '../assets/sounds/SpinSound.mp3'
+import DingSound from '../assets/sounds/DingSound.mp3'
 
 const WheelContainer = ({ foodList }) => {
     const container = useRef(null);
     const effectRun = useRef(false);
     const [wheel, setWheel] = useState(null);
+    const [playSpin] = useSound(SpinSound);
+    const [playDing] = useSound(DingSound);
 
     const getWheelItems = () => {
         const foodItems = foodList.split("\n").filter(food => food !== "");
@@ -19,17 +24,35 @@ const WheelContainer = ({ foodList }) => {
         return wheelItems;
     }
 
+    // let originalColors = []
     const handleSpinClick = () => {
         if (wheel && foodList) {
-            wheel.spin(Math.floor(Math.random() * (1300 - 900 + 1)) + 900);
-            // wheel.spin(900);
+            // Untuk reset warna dari roda
+            wheel.items = getWheelItems();
+            // console.log(originalColors);
+            // if (originalColors.length === 0) {
+            //     originalColors = wheel.items.map(item => item.backgroundColor); // Store the original colors
+            // }
+
+            // for (let i = 0; i < wheel.items.length; i++) {
+            //     wheel.items[i].backgroundColor = originalColors[i]; // Restore the original color
+            // }
+
+            const randomSpin = Math.floor(Math.random() * (1400 - 900 + 1)) + 900;
+            wheel.spin(randomSpin);
+
+
             wheel.onCurrentIndexChange = () => {
-                const spinSound = new Audio("/src/assets/sounds/SpinSound.mp3");
-                spinSound.play();
+                playSpin();
             };
             wheel.onRest = () => {
-                const dingSound = new Audio("/src/assets/sounds/DingSound.mp3");
-                dingSound.play();
+                playDing();
+                // Ubah warna makanan tidak terpilih jadi gelap
+                for (let i = 0; i < wheel.items.length; i++) {
+                    if (i !== wheel.getCurrentIndex()) {
+                        wheel.items[i].backgroundColor = null
+                    }
+                }
             }
         }
     }
@@ -44,11 +67,13 @@ const WheelContainer = ({ foodList }) => {
             lineWidth: 3,
             lineColor: '#5c4f3e',
             itemLabelFont: 'Poppins',
-            itemLabelFontSizeMax: 45,
-            itemLabelRadiusMax: 0.35,
+            itemLabelFontSizeMax: 35,
+            itemLabelRadius: 0.90,
+            itemLabelRadiusMax: 0.30,
+            itemBackgroundColors: ['#5e5e5e'],
             overlayImage: wheelPointerImg,
             isInteractive: false,
-            rotationSpeedMax: 3000,
+            rotationSpeedMax: 20000,
             rotationResistance: -200,
             items: getWheelItems()
         }
