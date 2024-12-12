@@ -11,17 +11,25 @@ const Wheel = () => {
     }
 
     const handleFoodRecClick = (foodName) => {
-        setFoodList((prev) => prev + "\n" + foodName)
+        if (!foodList) {
+            setFoodList(foodName)
+        } else {
+            setFoodList((prev) => prev + "\n" + foodName)
+        }
 
     }
 
+    const handleDeleteClick = () => {
+        setFoodList("");
+    }
+
     return (
-        <div className="flex flex-col sm:flex-row w-full lg:w-[90%]">
-            <div className="h-[50vh] flex justify-center items-start p-5 sm:w-[50%] sm:h-screen">
+        <div className="flex flex-col items-center justify-center gap-6 w-full md:flex-row md:items-start  lg:w-[95%]">
+            <div className="p-5 h-full w-full max-w-[500px] md:max-w-[550px] flex justify-center items-start md:w-[50%] md:h-screen">
                 <WheelContainer foodList={foodList} />
             </div>
-            <div className="min-h-[50vh] px-5 flex flex-col items-center sm:w-[50%] sm:items-start sm:p-5">
-                <FoodList foodList={foodList} onFoodListChange={handleFoodListChange} />
+            <div className="px-5 flex flex-col items-center md:w-[50%] md:items-start md:p-5">
+                <FoodList foodList={foodList} onFoodListChange={handleFoodListChange} onDeleteClick={handleDeleteClick} />
                 <FoodRecommendations onFoodRecClick={handleFoodRecClick} />
             </div>
         </div >

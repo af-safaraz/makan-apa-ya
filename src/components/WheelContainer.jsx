@@ -12,6 +12,7 @@ const WheelContainer = ({ foodList }) => {
     const [playSpin] = useSound(SpinSound);
     const [playDing] = useSound(DingSound);
 
+
     const getWheelItems = () => {
         const foodItems = foodList.split("\n").filter(food => food !== "");
         const colorPreset = foodItems.length % 4 === 1 ? ["#FF8D47", "#F0ECCF", "#ffc96f", "#A3BB98", "#F0ECCF"] : ["#FF8D47", "#F0ECCF", "#ffc96f", "#A3BB98"];
@@ -66,11 +67,14 @@ const WheelContainer = ({ foodList }) => {
             borderColor: '#5c4f3e',
             lineWidth: 3,
             lineColor: '#5c4f3e',
-            itemLabelFont: 'Poppins',
+            itemLabelFont: 'Poppins, sans-serif',
             itemLabelFontSizeMax: 35,
+            itemLabelColor: ['#2c2c2c'],
             itemLabelRadius: 0.90,
             itemLabelRadiusMax: 0.30,
             itemBackgroundColors: ['#5e5e5e'],
+            itemLabelStrokeColor: '#2c2c2c',
+            itemLabelStrokeWidth: 0.3,
             overlayImage: wheelPointerImg,
             isInteractive: false,
             rotationSpeedMax: 20000,
@@ -97,8 +101,9 @@ const WheelContainer = ({ foodList }) => {
 
     return (
         <div className="relative h-full w-screen aspect-square sm:w-full sm:h-auto">
+            {/* <div className="absolute w-full h-full bg-tertiary-dark rounded-full z-0"></div> */}
             <div className="wheel-container w-full h-full" ref={container}></div>
-            <button onClick={handleSpinClick} className="absolute w-[21%] h-[21%] inset-0 m-auto rounded-full cursor-pointer outline-none"></button>
+            <button onClick={handleSpinClick} className="absolute w-[21%] h-[21%] inset-0 m-auto rounded-full cursor-pointer outline-none "></button>
         </div>
     )
 }

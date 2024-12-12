@@ -17,6 +17,9 @@ export default {
         "tertiary-darker": "#d1c2b0",
         "tertiary-700": "#695c4d",
       },
+      screens: {
+        "2xs": "376px",
+      },
     },
   },
   plugins: [],
