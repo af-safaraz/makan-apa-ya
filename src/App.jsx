@@ -18,8 +18,8 @@ function App() {
           {isMsgVisible && <Message />}
         </Hero> */}
       </section>
-      <div className="min-h-screen h-screen">
-        <section id="wheel" className="mt-20 w-screen md:flex md:justify-center xl:m-auto xl:max-w-[1400px]">
+      <section className="min-h-screen flex flex-col justify-between items-center">
+        <section id="wheel" className="mt-8 w-screen md:flex md:justify-center xl:max-w-[1400px]">
           <Wheel />
           {/* <Wheel>
             <WheelContainer countSpin={countSpin} onSpinRest={setCountSpin} />
@@ -28,7 +28,7 @@ function App() {
         <footer className="flex justify-center">
           <Footer />
         </footer>
-      </div>
+      </section>
     </main>
   )
 }

@@ -6,13 +6,13 @@ const FoodList = ({ foodList, onFoodListChange, onDeleteClick }) => {
                 <textarea
                     id="foodList"
                     name="foodList"
-                    placeholder="Masukkan nama-nama makanan yang dipisahkan dengan baris baru seperti:&#10;Nasi Goreng&#10;Bakso&#10;Sate&#10;Soto"
-                    className="mt-3 mb-5 p-2 pr-16 w-[90%] h-40 md:h-60 font-poppins text-sm text-gray-700 resize-none border border-tertiary-darker rounded-lg bg-tertiary-dark md:w-full sm:text-base"
+                    placeholder="Masukkan nama makanan pilihanmu seperti:&#10;Nasi Goreng&#10;Bakso&#10;Sate&#10;Soto"
+                    className="mt-3 mb-5 p-2 pr-12 w-[90%] h-40 md:h-60 font-poppins text-sm text-gray-700 resize-none border border-tertiary-darker rounded-lg bg-tertiary-dark md:w-full sm:text-base"
                     value={foodList}
                     onChange={onFoodListChange}
                 >
                 </textarea>
-                <button type="button" onClick={onDeleteClick} className="absolute top-6 right-8 md:right-3 text-lg w-8 h-8 rounded-lg hover:bg-tertiary-darker active:bg-tertiary-700">&#x2715;</button>
+                <button type="button" onClick={onDeleteClick} className="absolute top-5 right-6 md:right-3 text-lg w-8 h-8 rounded-lg hover:bg-tertiary-darker active:bg-tertiary-700">&#x2715;</button>
             </form>
         </div>
     )

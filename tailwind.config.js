@@ -20,6 +20,18 @@ export default {
       screens: {
         "2xs": "376px",
       },
+      keyframes: {
+        moveText: {
+          "0%": { "margin-top": "0" },
+          "25%": { "margin-top": "0" },
+          "50%": { "margin-top": "-40px" },
+          "75%": { "margin-top": "-40px" },
+          "100%": { "margin-top": "0" },
+        },
+      },
+      animation: {
+        "rolling-text": "moveText 8s infinite",
+      },
     },
   },
   plugins: [],

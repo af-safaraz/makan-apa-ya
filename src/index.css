@@ -29,7 +29,7 @@ section {
 
 @layer utilities {
   .text-black-border {
-    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: #2c2c2c;
   }
   .text-black-shadow-sm {

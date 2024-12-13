@@ -12,11 +12,20 @@ import Star from '../assets/images/Star.svg?react';
 const Hero = () => {
     return (
         <div className="min-h-screen h-full flex flex-col justify-start items-center ">
-            <div className="mt-3 flex justify-center items-center w-48 min-h-10 gap-8 bg-[#2c2c2c] rounded-full">
-                <a href="https://www.instagram.com/safaraz_/" target="_blank"><img src={instagram} alt="Instagram Logo" className="w-6" /></a>
-                <a href="https://github.com/af-safaraz" target="_blank"><img src={gitHub} alt="GitHub Logo" className="w-6" /></a>
-                <a href="mailto:afsafarazd@gmail.com" target="_blank"><img src={mail} alt="Mail Logo" className="w-6" /></a>
+            {/* <div className="mt-3 flex flex-col justify-center items-center w-48 min-h-10 gap-8 bg-[#2c2c2c] rounded-full"> */}
+            <div className="mt-3 w-48 min-h-10 h-10  bg-[#2c2c2c] rounded-full overflow-hidden">
+                <div className="flex flex-col justify-start items-center h-full animate-rolling-text hover:animate-none">
+                    <div className="flex justify-center items-center w-full gap-8 min-h-10 ">
+                        <a href="https://www.instagram.com/safaraz_/" target="_blank"><img src={instagram} alt="Instagram Logo" className="w-6" /></a>
+                        <a href="https://github.com/af-safaraz" target="_blank"><img src={gitHub} alt="GitHub Logo" className="w-6" /></a>
+                        <a href="mailto:afsafarazd@gmail.com" target="_blank"><img src={mail} alt="Mail Logo" className="w-6" /></a>
+                    </div>
+                    <div className="min-h-10 w-full flex justify-center items-center">
+                        <p className="font-poppins text-white text-center text-sm">Contact The Creator</p>
+                    </div>
+                </div>
             </div>
+
             <div className="min-h-[600px] flex-1 h-full w-full max-w-6xl flex flex-col justify-center items-center sm:flex-row">
                 <div className="relative max-h-[700px] sm:max-h-[600px] h-full w-full flex-1 flex flex-col justify-center items-center sm:flex-row ">
                     <div className="px-4 flex flex-col items-center text-center sm:pb-0 sm:px-8 sm:max-w-5xl sm:justify-center sm:items-center sm:h-full z-50">
