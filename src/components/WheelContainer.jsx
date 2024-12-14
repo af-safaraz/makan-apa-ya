@@ -5,7 +5,7 @@ import useSound from 'use-sound'
 import SpinSound from '../assets/sounds/SpinSound.mp3'
 import DingSound from '../assets/sounds/DingSound.mp3'
 
-const WheelContainer = ({ foodList }) => {
+const WheelContainer = ({ foodList, setCountSpin }) => {
     const container = useRef(null);
     const effectRun = useRef(false);
     const [wheel, setWheel] = useState(null);
@@ -30,6 +30,7 @@ const WheelContainer = ({ foodList }) => {
         if (wheel && foodList) {
             // Untuk reset warna dari roda
             wheel.items = getWheelItems();
+
             // console.log(originalColors);
             // if (originalColors.length === 0) {
             //     originalColors = wheel.items.map(item => item.backgroundColor); // Store the original colors
@@ -42,12 +43,12 @@ const WheelContainer = ({ foodList }) => {
             const randomSpin = Math.floor(Math.random() * (1400 - 900 + 1)) + 900;
             wheel.spin(randomSpin);
 
-
             wheel.onCurrentIndexChange = () => {
                 playSpin();
             };
             wheel.onRest = () => {
                 playDing();
+                setCountSpin((prev) => prev + 1)
                 // Ubah warna makanan tidak terpilih jadi gelap
                 for (let i = 0; i < wheel.items.length; i++) {
                     if (i !== wheel.getCurrentIndex()) {

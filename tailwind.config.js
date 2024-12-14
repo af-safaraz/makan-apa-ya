@@ -28,9 +28,17 @@ export default {
           "75%": { "margin-top": "-40px" },
           "100%": { "margin-top": "0" },
         },
+        moveTextMobile: {
+          "0%": { "margin-top": "0" },
+          "25%": { "margin-top": "0" },
+          "50%": { "margin-top": "-36px" },
+          "75%": { "margin-top": "-36px" },
+          "100%": { "margin-top": "0" },
+        },
       },
       animation: {
         "rolling-text": "moveText 8s infinite",
+        "rolling-text-mobile": "moveTextMobile 8s infinite",
       },
     },
   },

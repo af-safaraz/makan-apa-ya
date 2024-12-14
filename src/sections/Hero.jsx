@@ -9,19 +9,19 @@ import iceCream from '../assets/images/iceCream.svg'
 import pudding from '../assets/images/Pudding.svg'
 import Star from '../assets/images/Star.svg?react';
 
-const Hero = () => {
+const Hero = ({ children }) => {
     return (
         <div className="min-h-screen h-full flex flex-col justify-start items-center ">
             {/* <div className="mt-3 flex flex-col justify-center items-center w-48 min-h-10 gap-8 bg-[#2c2c2c] rounded-full"> */}
-            <div className="mt-3 w-48 min-h-10 h-10  bg-[#2c2c2c] rounded-full overflow-hidden">
-                <div className="flex flex-col justify-start items-center h-full animate-rolling-text hover:animate-none">
-                    <div className="flex justify-center items-center w-full gap-8 min-h-10 ">
-                        <a href="https://www.instagram.com/safaraz_/" target="_blank"><img src={instagram} alt="Instagram Logo" className="w-6" /></a>
-                        <a href="https://github.com/af-safaraz" target="_blank"><img src={gitHub} alt="GitHub Logo" className="w-6" /></a>
-                        <a href="mailto:afsafarazd@gmail.com" target="_blank"><img src={mail} alt="Mail Logo" className="w-6" /></a>
+            <div className="mt-3 w-40 sm:w-48 h-9 sm:h-10 bg-[#2c2c2c] rounded-full overflow-hidden">
+                <div className="flex flex-col justify-start items-center h-full animate-rolling-text-mobile sm:animate-rolling-text hover:animate-none">
+                    <div className="flex justify-center items-center w-full gap-8 min-h-9 sm:min-h-10">
+                        <a href="https://www.instagram.com/safaraz_/" target="_blank"><img src={instagram} alt="Instagram Logo" className="w-5 sm:w-6" /></a>
+                        <a href="https://github.com/af-safaraz" target="_blank"><img src={gitHub} alt="GitHub Logo" className="w-5 sm:w-6" /></a>
+                        <a href="mailto:afsafarazd@gmail.com" target="_blank"><img src={mail} alt="Mail Logo" className="w-5 sm:w-6" /></a>
                     </div>
-                    <div className="min-h-10 w-full flex justify-center items-center">
-                        <p className="font-poppins text-white text-center text-sm">Contact The Creator</p>
+                    <div className="min-h-9 sm:min-h-10 w-full flex justify-center items-center">
+                        <p className="font-poppins text-white text-center text-xs sm:text-sm">Contact The Creator</p>
                     </div>
                 </div>
             </div>
@@ -41,27 +41,23 @@ const Hero = () => {
                     </div>
                     {/* Version 3 */}
                     <div className="absolute w-full h-full sm:h-[95%]">
-                        <img src={ramen} alt="Cute Ramen" className="absolute max-w-[110px] w-[25%] top-3 left-[10%] sm:max-w-none sm:w-[13%] sm:left-[8%] lg:left-8 " />
-                        <div className="hidden absolute shadow-2xl top-[18%] sm:top-[2%] md:top-[5%] left-[12%] sm:left-[27%] md:left-[25%] lg:left-[20%] z-50 lg:w-96 bg-tertiary-dark p-4 sm:p-5 rounded-2xl border-2 border-[#2c2c2c] before:content-[' '] before:absolute before:w-0 before:h-0 after:content-[' '] after:absolute after:w-0 after:h-0 
-                        before:left-[30px] before:top-[-30px] before:border-[15px] before:border-l-transparent before:border-r-transparent before:border-t-transparent before:border-b-[#2c2c2c] after:left-[32px] after:top-[-25px] after:border-[13px] after:border-l-transparent after:border-r-transparent after:border-t-transparent after:border-b-tertiary-dark
-                        sm:before:left-[-30px] sm:before:top-[15px] sm:before:border-[15px] sm:before:border-l-transparent sm:before:border-r-[#2c2c2c] sm:before:border-t-[#2c2c2c] sm:before:border-b-transparent sm:after:left-[-25px] sm:after:top-[17px] sm:after:border-[13px] sm:after:border-l-transparent sm:after:border-r-tertiary-dark sm:after:border-t-tertiary-dark sm:after:border-b-transparent">
-                            <p className="font-poppins text-xs sm:text-sm lg:text-base">If the result is not what you want, <br />maybe you already know what you want.</p>
-                        </div>
+                        <img src={ramen} alt="Cute Ramen" className="absolute max-w-[110px] w-[18%] top-[7%] left-[10%] sm:max-w-none sm:w-[13%] sm:top-[2%] sm:left-[8%] lg:left-8 " />
+                        {children}
                         <div className="absolute w-[25%] h-[8%] top-[16%] left-[10%] sm:w-[23%] sm:h-[17%] sm:left-[4%] sm:top-[5%] lg:w-[19%] lg:h-[35%]">
                             <Star className="absolute w-6 h-6 lg:w-8 lg:h-8 bottom-0 left-0" />
                             <Star className="absolute w-4 h-4 sm:h-4 lg:w-6 lg:h-6 top-0 right-0" fill="#F9DDB7" />
                         </div>
-                        <img src={pudding} alt="Cute Pudding" className="absolute max-w-[110px] w-[25%] top-[5%] right-[10%] sm:max-w-none sm:w-[13%] sm:top-0 sm:right-[6%] md:right-[8%] lg:right-7" />
+                        <img src={pudding} alt="Cute Pudding" className="absolute max-w-[110px] w-[18%] top-[9%] right-[10%] sm:max-w-none sm:w-[13%] sm:top-0 sm:right-[6%] md:right-[8%] lg:right-7" />
                         <div className="absolute w-[28%] h-[8%] top-[18%] right-[10%] sm:w-[23%] sm:h-[17%] sm:right-[3%] sm:top-[8%] lg:w-[19%] lg:h-[35%] lg:top-[8%]">
                             <Star className="absolute w-4 h-4 sm:h-4 lg:w-6 lg:h-6 top-0 left-0" />
                             <Star className="absolute w-6 h-6 lg:w-8 lg:h-8 bottom-0 right-0" fill="#F9DDB7" />
                         </div>
-                        <img src={burger} alt="Cute Burger" className="absolute max-w-[110px] w-[25%] bottom-[6%] left-[10%] sm:max-w-none sm:w-[13%] sm:left-[19%] lg:left-[16%]" />
+                        <img src={burger} alt="Cute Burger" className="absolute max-w-[110px] w-[18%] bottom-[11%] left-[10%] sm:max-w-none sm:w-[13%] sm:bottom-[6%] sm:left-[19%] lg:left-[16%]" />
                         <div className="absolute w-[30%] h-[10%] bottom-[18%] left-[12%] sm:w-[23%] sm:h-[20%] sm:left-[15%] sm:bottom-[5%] lg:w-[22%] lg:h-[26%] lg:left-[12%] lg:bottom-[5%]">
                             <Star className="absolute w-6 h-6 lg:w-8 lg:h-8 top-0 left-0" fill="#F9DDB7" />
                             <Star className="absolute w-4 h-4 sm:h-4 lg:w-6 lg:h-6 bottom-0 right-0" />
                         </div>
-                        <img src={iceCream} alt="Cute Ice Cream" className="absolute max-w-[110px] w-[25%] bottom-[2%] right-[10%] sm:max-w-none  sm:w-[12%] sm:bottom-[6%] sm:right-[18%] md:right-[20%] lg:right-[16%]" />
+                        <img src={iceCream} alt="Cute Ice Cream" className="absolute max-w-[110px] w-[18%] bottom-[6%] right-[12%] sm:max-w-none  sm:w-[12%] sm:bottom-[6%] sm:right-[18%] md:right-[20%] lg:right-[16%]" />
                         <div className="absolute w-[30%] h-[9%] bottom-[16%] right-[12%] sm:w-[24%] sm:h-[16%] sm:right-[14%] sm:bottom-[10%] lg:w-[23%] lg:h-[26%] lg:right-[11%] lg:bottom-[8%]">
                             <Star className="absolute w-6 h-6 lg:w-8 lg:h-8 top-0 right-0" />
                             <Star className="absolute w-4 h-4 lg:w-6 lg:h-6 bottom-0 left-0" fill="#F9DDB7" />
