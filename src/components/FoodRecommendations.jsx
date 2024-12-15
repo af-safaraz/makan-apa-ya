@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 
 const FoodRecommendations = ({ onFoodRecClick }) => {
-    const [selectedCategory, setSelectedCategory] = useState("Aneka Nasi");
+    const [selectedCategory, setSelectedCategory] = useState("Nasi");
     const handleCategoriesChange = (e) => {
         setSelectedCategory(e.target.value);
     }

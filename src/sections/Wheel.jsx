@@ -11,7 +11,7 @@ const Wheel = ({ wheelContainer, foodList, foodRec }) => {
                 {wheelContainer}
                 {/* <WheelContainer foodList={foodList} /> */}
             </div>
-            <div className="px-5 flex flex-col items-center md:w-[50%] md:items-start md:p-5">
+            <div className="px-5 w-full flex flex-col items-center md:w-[50%] md:items-start md:p-5">
                 {foodList}
                 {foodRec}
                 {/* <FoodList foodList={foodList} onFoodListChange={handleFoodListChange} onDeleteClick={handleDeleteClick} />

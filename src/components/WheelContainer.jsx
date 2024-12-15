@@ -9,8 +9,12 @@ const WheelContainer = ({ foodList, setCountSpin }) => {
     const container = useRef(null);
     const effectRun = useRef(false);
     const [wheel, setWheel] = useState(null);
-    const [playSpin] = useSound(SpinSound);
-    const [playDing] = useSound(DingSound);
+    const [playSpin] = useSound(SpinSound, {
+        volume: 0.20,
+    });
+    const [playDing] = useSound(DingSound, {
+        volume: 0.20,
+    });
 
 
     const getWheelItems = () => {

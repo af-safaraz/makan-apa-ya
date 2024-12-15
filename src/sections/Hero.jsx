@@ -1,41 +1,28 @@
 import Button from '../components/Button'
-// import foodWheel from '../assets/images/WheelOfFood.svg'
-import instagram from '../assets/images/Instagram.svg'
-import gitHub from '../assets/images/Github.svg'
-import mail from '../assets/images/Gmail.svg'
+import SocialMedia from '../components/SocialMedia'
 import ramen from '../assets/images/Ramen.svg'
 import burger from '../assets/images/Burger.svg'
 import iceCream from '../assets/images/iceCream.svg'
 import pudding from '../assets/images/Pudding.svg'
-import Star from '../assets/images/Star.svg?react';
+import Star from '../assets/images/Star.svg?react'
 
 const Hero = ({ children }) => {
     return (
         <div className="min-h-screen h-full flex flex-col justify-start items-center ">
-            {/* <div className="mt-3 flex flex-col justify-center items-center w-48 min-h-10 gap-8 bg-[#2c2c2c] rounded-full"> */}
-            <div className="mt-3 w-40 sm:w-48 h-9 sm:h-10 bg-[#2c2c2c] rounded-full overflow-hidden">
-                <div className="flex flex-col justify-start items-center h-full animate-rolling-text-mobile sm:animate-rolling-text hover:animate-none">
-                    <div className="flex justify-center items-center w-full gap-8 min-h-9 sm:min-h-10">
-                        <a href="https://www.instagram.com/safaraz_/" target="_blank"><img src={instagram} alt="Instagram Logo" className="w-5 sm:w-6" /></a>
-                        <a href="https://github.com/af-safaraz" target="_blank"><img src={gitHub} alt="GitHub Logo" className="w-5 sm:w-6" /></a>
-                        <a href="mailto:afsafarazd@gmail.com" target="_blank"><img src={mail} alt="Mail Logo" className="w-5 sm:w-6" /></a>
-                    </div>
-                    <div className="min-h-9 sm:min-h-10 w-full flex justify-center items-center">
-                        <p className="font-poppins text-white text-center text-xs sm:text-sm">Contact The Creator</p>
-                    </div>
-                </div>
+            <div className="w-full h-10 mt-3 flex justify-center items-end">
+                <SocialMedia />
             </div>
-
             <div className="min-h-[600px] flex-1 h-full w-full max-w-6xl flex flex-col justify-center items-center sm:flex-row">
                 <div className="relative max-h-[700px] sm:max-h-[600px] h-full w-full flex-1 flex flex-col justify-center items-center sm:flex-row ">
-                    <div className="px-4 flex flex-col items-center text-center sm:pb-0 sm:px-8 sm:max-w-5xl sm:justify-center sm:items-center sm:h-full z-50">
+                    <div className="px-8 flex flex-col items-center text-center sm:pb-0 sm:px-8 sm:max-w-5xl sm:justify-center sm:items-center sm:h-full z-50">
                         <h1 className="font-dela-gothic text-[3rem] 2xs:text-[3.5rem] text-primary text-black-border text-black-shadow-sm leading-[1.15] sm:text-7xl sm:text-black-shadow-lg">
                             Makan <span className="md:inline block">Apa Ya?</span>
                         </h1>
                         <p className="my-7 font-poppins text-sm text-gray-700 sm:text-lg">
-                            Bingung mau makan apa?
-                            <span className="lg:inline block">Biarkan kami bantu pilih!</span>
-                            <span className="block">Masukkan pilihan makan favoritmu atau pilih dari daftar rekomendasi, lalu putar roda untuk mendapatkan pilihan. Mudah, cepat, dan tanpa drama!</span>
+                            Bingung mau makan apa? <br className="hidden 3xs:inline md:hidden" />
+                            Website ini mungkin bisa bantu kamu. <br className="hidden 3xs:inline" />
+                            Masukkan pilihan makanan favoritmu atau pilih dari daftar rekomendasi, lalu putar roda untuk mendapatkan pilihan. <br className="hidden 3xs:inline md:hidden" />
+                            Mudah, cepat, dan tanpa drama!
                         </p>
                         <Button label="Mulai Sekarang" href="#wheel" />
                     </div>
@@ -103,7 +90,7 @@ const Hero = ({ children }) => {
             </div> */}
 
             </div >
-        </div>
+        </div >
     )
 }
 
