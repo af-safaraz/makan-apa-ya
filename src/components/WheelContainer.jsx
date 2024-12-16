@@ -5,12 +5,17 @@ import useSound from 'use-sound'
 import SpinSound from '../assets/sounds/SpinSound.mp3'
 import DingSound from '../assets/sounds/DingSound.mp3'
 
-const WheelContainer = ({ foodList }) => {
+const WheelContainer = ({ foodList, setCountSpin }) => {
     const container = useRef(null);
     const effectRun = useRef(false);
     const [wheel, setWheel] = useState(null);
-    const [playSpin] = useSound(SpinSound);
-    const [playDing] = useSound(DingSound);
+    const [playSpin] = useSound(SpinSound, {
+        volume: 0.20,
+    });
+    const [playDing] = useSound(DingSound, {
+        volume: 0.20,
+    });
+
 
     const getWheelItems = () => {
         const foodItems = foodList.split("\n").filter(food => food !== "");
@@ -29,6 +34,7 @@ const WheelContainer = ({ foodList }) => {
         if (wheel && foodList) {
             // Untuk reset warna dari roda
             wheel.items = getWheelItems();
+
             // console.log(originalColors);
             // if (originalColors.length === 0) {
             //     originalColors = wheel.items.map(item => item.backgroundColor); // Store the original colors
@@ -41,12 +47,12 @@ const WheelContainer = ({ foodList }) => {
             const randomSpin = Math.floor(Math.random() * (1400 - 900 + 1)) + 900;
             wheel.spin(randomSpin);
 
-
             wheel.onCurrentIndexChange = () => {
                 playSpin();
             };
             wheel.onRest = () => {
                 playDing();
+                setCountSpin((prev) => prev + 1)
                 // Ubah warna makanan tidak terpilih jadi gelap
                 for (let i = 0; i < wheel.items.length; i++) {
                     if (i !== wheel.getCurrentIndex()) {
@@ -66,11 +72,14 @@ const WheelContainer = ({ foodList }) => {
             borderColor: '#5c4f3e',
             lineWidth: 3,
             lineColor: '#5c4f3e',
-            itemLabelFont: 'Poppins',
+            itemLabelFont: 'Poppins, sans-serif',
             itemLabelFontSizeMax: 35,
+            itemLabelColor: ['#2c2c2c'],
             itemLabelRadius: 0.90,
             itemLabelRadiusMax: 0.30,
             itemBackgroundColors: ['#5e5e5e'],
+            itemLabelStrokeColor: '#2c2c2c',
+            itemLabelStrokeWidth: 0.3,
             overlayImage: wheelPointerImg,
             isInteractive: false,
             rotationSpeedMax: 20000,
@@ -97,8 +106,9 @@ const WheelContainer = ({ foodList }) => {
 
     return (
         <div className="relative h-full w-screen aspect-square sm:w-full sm:h-auto">
+            {/* <div className="absolute w-full h-full bg-tertiary-dark rounded-full z-0"></div> */}
             <div className="wheel-container w-full h-full" ref={container}></div>
-            <button onClick={handleSpinClick} className="absolute w-[21%] h-[21%] inset-0 m-auto rounded-full cursor-pointer outline-none"></button>
+            <button onClick={handleSpinClick} className="absolute w-[21%] h-[21%] inset-0 m-auto rounded-full cursor-pointer outline-none "></button>
         </div>
     )
 }

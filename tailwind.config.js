@@ -17,6 +17,30 @@ export default {
         "tertiary-darker": "#d1c2b0",
         "tertiary-700": "#695c4d",
       },
+      screens: {
+        "2xs": "376px",
+        "3xs": "321px",
+      },
+      keyframes: {
+        moveText: {
+          "0%": { "margin-top": "0" },
+          "25%": { "margin-top": "0" },
+          "50%": { "margin-top": "-40px" },
+          "60%": { "margin-top": "-40px" },
+          "100%": { "margin-top": "0" },
+        },
+        moveTextMobile: {
+          "0%": { "margin-top": "0" },
+          "25%": { "margin-top": "0" },
+          "50%": { "margin-top": "-36px" },
+          "60%": { "margin-top": "-36px" },
+          "100%": { "margin-top": "0" },
+        },
+      },
+      animation: {
+        "rolling-text": "moveText 10s infinite",
+        "rolling-text-mobile": "moveTextMobile 10s infinite",
+      },
     },
   },
   plugins: [],

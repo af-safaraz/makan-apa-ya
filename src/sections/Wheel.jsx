@@ -1,28 +1,21 @@
 
-import WheelContainer from '../components/WheelContainer'
-import FoodList from '../components/FoodList'
-import FoodRecommendations from '../components/FoodRecommendations'
-import { useState } from 'react'
+// import WheelContainer from '../components/WheelContainer'
+// import FoodList from '../components/FoodList'
+// import FoodRecommendations from '../components/FoodRecommendations'
+// import { useState } from 'react'
 
-const Wheel = () => {
-    const [foodList, setFoodList] = useState('Nasi Goreng\nSoto\nBakso\nSate');
-    const handleFoodListChange = (e) => {
-        setFoodList(e.target.value)
-    }
-
-    const handleFoodRecClick = (foodName) => {
-        setFoodList((prev) => prev + "\n" + foodName)
-
-    }
-
+const Wheel = ({ wheelContainer, foodList, foodRec }) => {
     return (
-        <div className="flex flex-col sm:flex-row w-full lg:w-[90%]">
-            <div className="h-[50vh] flex justify-center items-start p-5 sm:w-[50%] sm:h-screen">
-                <WheelContainer foodList={foodList} />
+        <div className="flex flex-col items-center justify-center gap-6 w-full md:flex-row md:items-start  lg:w-[95%]">
+            <div className="p-5 h-full w-full max-w-[500px] md:max-w-[550px] flex justify-center items-start md:w-[50%] md:h-full">
+                {wheelContainer}
+                {/* <WheelContainer foodList={foodList} /> */}
             </div>
-            <div className="min-h-[50vh] px-5 flex flex-col items-center sm:w-[50%] sm:items-start sm:p-5">
-                <FoodList foodList={foodList} onFoodListChange={handleFoodListChange} />
-                <FoodRecommendations onFoodRecClick={handleFoodRecClick} />
+            <div className="px-5 w-full flex flex-col items-center md:w-[50%] md:items-start md:p-5">
+                {foodList}
+                {foodRec}
+                {/* <FoodList foodList={foodList} onFoodListChange={handleFoodListChange} onDeleteClick={handleDeleteClick} />
+                <FoodRecommendations onFoodRecClick={handleFoodRecClick} /> */}
             </div>
         </div >
     )
