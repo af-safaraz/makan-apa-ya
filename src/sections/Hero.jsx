@@ -2,7 +2,7 @@ import Button from '../components/Button'
 import SocialMedia from '../components/SocialMedia'
 import ramen from '../assets/images/Ramen.svg'
 import burger from '../assets/images/Burger.svg'
-import iceCream from '../assets/images/iceCream.svg'
+import iceCream from '../assets/images/IceCream.svg'
 import pudding from '../assets/images/Pudding.svg'
 import Star from '../assets/images/Star.svg?react'
 
