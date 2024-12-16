@@ -6,6 +6,7 @@ import WheelContainer from './components/WheelContainer'
 import FoodList from './components/FoodList'
 import FoodRecommendations from './components/FoodRecommendations'
 import { useState, useEffect } from 'react'
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const [countSpin, setCountSpin] = useState(0)
@@ -55,6 +56,7 @@ function App() {
           <Footer />
         </footer>
       </section>
+      <Analytics />
     </main>
   )
 }
