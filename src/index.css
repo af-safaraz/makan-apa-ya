@@ -18,15 +18,6 @@
   }
 }
 
-/* html {
-  scroll-snap-type: y mandatory;
-}
-
-section {
-  height: 100vh;
-  scroll-snap-align: start;
-} */
-
 @layer utilities {
   .text-black-border {
     -webkit-text-stroke-width: 1.5px;

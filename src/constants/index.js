@@ -169,12 +169,6 @@ export const foods = [
 
 foods.sort((a, b) => a.name.localeCompare(b.name));
 
-// export const foodCategories = [
-//   ...new Set(foods.flatMap((food) => food.category)),
-// ];
-
-// foodCategories.sort();
-
 export const foodCategories = [
   "Nasi",
   "Mie",

@@ -13,7 +13,6 @@ export default {
         "secondary-dark": "#dba54b",
         tertiary: "#FAEEE0",
         "tertiary-dark": "#F2E2CF",
-        // "tertiary-dark": "#efe1d1",
         "tertiary-darker": "#d1c2b0",
         "tertiary-700": "#695c4d",
       },

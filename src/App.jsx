@@ -10,7 +10,7 @@ import { useState, useEffect } from 'react'
 function App() {
   const [countSpin, setCountSpin] = useState(0)
   const [isMsgVisible, setIsMsgVisible] = useState(false)
-  const [foodList, setFoodList] = useState('Nasi Goreng\nSoto\nBakso\nSate');
+  const [foodList, setFoodList] = useState('Nasi Goreng\nSoto\nBakso\nSate')
 
   const handleFoodListChange = (e) => {
     setFoodList(e.target.value)
@@ -28,21 +28,14 @@ function App() {
     setFoodList("");
   }
 
-  // const handleSpinRest = () => {
-  //   setCountSpin((prev) => prev + 1)
-  //   if (countSpin === 3) {
-  //     setIsMsgVisible(true);
-  //   }
-  // }
-
   useEffect(() => {
     if (countSpin === 3) {
       setIsMsgVisible(true)
       setTimeout(() => {
-        setIsMsgVisible(false);
-      }, 8000);
+        setIsMsgVisible(false)
+      }, 8000)
     }
-  }, [countSpin]);
+  }, [countSpin])
 
   return (
     <main>

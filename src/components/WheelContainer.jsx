@@ -1,57 +1,47 @@
 import { Wheel } from '../../node_modules/spin-wheel/dist/spin-wheel-esm.js'
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react'
 import WheelPointer from '../assets/images/WheelPointer.svg'
 import useSound from 'use-sound'
 import SpinSound from '../assets/sounds/SpinSound.mp3'
 import DingSound from '../assets/sounds/DingSound.mp3'
 
 const WheelContainer = ({ foodList, setCountSpin }) => {
-    const container = useRef(null);
-    const effectRun = useRef(false);
-    const [wheel, setWheel] = useState(null);
+    const container = useRef(null)
+    const effectRun = useRef(false)
+    const [wheel, setWheel] = useState(null)
     const [playSpin] = useSound(SpinSound, {
         volume: 0.20,
-    });
+    })
     const [playDing] = useSound(DingSound, {
         volume: 0.20,
-    });
+    })
 
 
     const getWheelItems = () => {
-        const foodItems = foodList.split("\n").filter(food => food !== "");
-        const colorPreset = foodItems.length % 4 === 1 ? ["#FF8D47", "#F0ECCF", "#ffc96f", "#A3BB98", "#F0ECCF"] : ["#FF8D47", "#F0ECCF", "#ffc96f", "#A3BB98"];
+        const foodItems = foodList.split("\n").filter(food => food !== "")
+        const colorPreset = foodItems.length % 4 === 1 ? ["#FF8D47", "#F0ECCF", "#ffc96f", "#A3BB98", "#F0ECCF"] : ["#FF8D47", "#F0ECCF", "#ffc96f", "#A3BB98"]
         const wheelItems = foodItems.map((food, index) => {
             return {
                 label: food,
                 backgroundColor: colorPreset[index % colorPreset.length]
             };
         });
-        return wheelItems;
+        return wheelItems
     }
 
-    // let originalColors = []
     const handleSpinClick = () => {
         if (wheel && foodList) {
             // Untuk reset warna dari roda
-            wheel.items = getWheelItems();
+            wheel.items = getWheelItems()
 
-            // console.log(originalColors);
-            // if (originalColors.length === 0) {
-            //     originalColors = wheel.items.map(item => item.backgroundColor); // Store the original colors
-            // }
-
-            // for (let i = 0; i < wheel.items.length; i++) {
-            //     wheel.items[i].backgroundColor = originalColors[i]; // Restore the original color
-            // }
-
-            const randomSpin = Math.floor(Math.random() * (1400 - 900 + 1)) + 900;
-            wheel.spin(randomSpin);
+            const randomSpin = Math.floor(Math.random() * (1400 - 900 + 1)) + 900
+            wheel.spin(randomSpin)
 
             wheel.onCurrentIndexChange = () => {
-                playSpin();
+                playSpin()
             };
             wheel.onRest = () => {
-                playDing();
+                playDing()
                 setCountSpin((prev) => prev + 1)
                 // Ubah warna makanan tidak terpilih jadi gelap
                 for (let i = 0; i < wheel.items.length; i++) {
@@ -66,7 +56,7 @@ const WheelContainer = ({ foodList, setCountSpin }) => {
     // Initialize Wheel
     useEffect(() => {
         const wheelPointerImg = new Image()
-        wheelPointerImg.src = WheelPointer;
+        wheelPointerImg.src = WheelPointer
         const props = {
             borderWidth: 5,
             borderColor: '#5c4f3e',
@@ -87,26 +77,24 @@ const WheelContainer = ({ foodList, setCountSpin }) => {
             items: getWheelItems()
         }
         if (!effectRun.current) {
-            const newWheel = new Wheel(container.current, props);
-
-            setWheel(newWheel);
+            const newWheel = new Wheel(container.current, props)
+            setWheel(newWheel)
         }
 
         return () => {
-            effectRun.current = true;
+            effectRun.current = true
         }
-    }, []);
+    }, [])
 
     // Update Wheel Items
     useEffect(() => {
         if (wheel) {
-            wheel.items = getWheelItems();
+            wheel.items = getWheelItems()
         }
-    }, [foodList]);
+    }, [foodList])
 
     return (
         <div className="relative h-full w-screen aspect-square sm:w-full sm:h-auto">
-            {/* <div className="absolute w-full h-full bg-tertiary-dark rounded-full z-0"></div> */}
             <div className="wheel-container w-full h-full" ref={container}></div>
             <button onClick={handleSpinClick} className="absolute w-[21%] h-[21%] inset-0 m-auto rounded-full cursor-pointer outline-none "></button>
         </div>

@@ -26,7 +26,6 @@ const Hero = ({ children }) => {
                         </p>
                         <Button label="Mulai Sekarang" href="#wheel" />
                     </div>
-                    {/* Version 3 */}
                     <div className="absolute w-full h-full sm:h-[95%]">
                         <img src={ramen} alt="Cute Ramen" className="absolute max-w-[90px] w-[18%] top-[2%] left-[10%] sm:max-w-none sm:w-[13%] sm:top-[2%] sm:left-[8%] lg:left-8 " />
                         {children}
@@ -51,44 +50,6 @@ const Hero = ({ children }) => {
                         </div>
                     </div>
                 </div>
-
-                {/* Version 1 */}
-                {/* <img src={ramen} alt="Cute Ramen" className="absolute top-0 left-9 w-[28%] md:w-[14%] md lg:top-[110px] lg:left-[35px] lg:w-[13%]" />
-                <img src={pudding} alt="Cute Pudding" className="absolute top-8 right-9 w-[28%] md:w-[14%] lg:top-[100px] lg:right-[30px] lg:w-[13%]" />
-                <Star className="absolute top-44 left-10 sm:w-[31px] sm:h-[31px] lg:top-[280px] lg:left-[45px]" />
-                <Star className="absolute top-32 left-[122px] sm:w-[22px] sm:h-[22px] lg:top-[140px] lg:left-[240px]" fill="#F9DDB7" />
-                <Star className="absolute top-36 right-[155px] sm:w-[21px] sm:h-[21px] lg:top-[150px] lg:right-[240px]" />
-                <Star className="absolute top-[190px] right-9 sm:w-[29px] sm:h-[29px] lg:top-[290px] lg:right-[35px]" fill="#F9DDB7" /> */}
-                {/* Version 2 */}
-                {/* <div className="absolute w-full h-full sm:h-[80%] lg:h-[75%] lg:translate-y-4 border border-primary">
-                    <img src={ramen} alt="Cute Ramen" className="absolute w-[25%] top-[7%] sm:w-[13%] sm:top-3 sm:left-[8%] lg:left-8 " />
-                    <Star className="absolute sm:top-24 sm:left-[4%] w-[20px] h-[20px] sm:w-[23px] sm:h-[23px] lg:top-44 lg:left-11 lg:w-[31px] lg:h-[31px]" />
-                    <Star className="absolute sm:top-8 sm:left-[25%] w-[20px] h-[20px] lg:top-9 lg:left-60 sm:w-[16px] sm:h-[16px] lg:w-[22px] lg:h-[22px]" fill="#F9DDB7" />
-                    <img src={pudding} alt="Cute Pudding" className="absolute w-[13%] top-0 sm:right-[8%] lg:right-7" />
-                    <Star className="absolute sm:top-11 sm:right-[24%] w-[20px] h-[20px] lg:top-12 lg:right-56 sm:w-[17px] sm:h-[17px] lg:w-[21px] lg:h-[21px]" />
-                    <Star className="absolute sm:top-28 sm:right-[3%] w-[20px] h-[20px] lg:top-48 lg:right-9 sm:w-[24px] sm:h-[24px] lg:w-[29px] lg:h-[29px]" fill="#F9DDB7" />
-                    <img src={burger} alt="Cute Burger" className="absolute w-[13%] bottom-2 sm:left-[20%] lg:left-44" />
-                    <Star className="absolute sm:bottom-28 sm:left-[15%] w-[20px] h-[20px] lg:bottom-40 lg:left-28 sm:w-[24px] sm:h-[24px] lg:w-[29px] lg:h-[29px]" fill="#F9DDB7" />
-                    <Star className="absolute sm:bottom-8 sm:left-[38%] w-[20px] h-[20px] lg:bottom-7 lg:left-96 sm:w-[17px] sm:h-[17px] lg:w-[21px] lg:h-[21px]" />
-                    <img src={iceCream} alt="Cute Ice Cream" className="absolute w-[12%] bottom-2 sm:right-[20%] lg:right-40" />
-                    <Star className="absolute sm:bottom-14 sm:right-[38%] w-[20px] h-[20px] lg:bottom-12 lg:right-96 sm:w-[16px] sm:h-[16px] lg:w-[20px] lg:h-[20px]" fill="#F9DDB7" />
-                    <Star className="absolute sm:bottom-24 sm:right-[13%] w-[20px] h-[20px] lg:bottom-36 lg:right-20 sm:w-[23px] sm:h-[23px] lg:w-[31px] lg:h-[31px]" />
-                    </div> */}
-
-
-                {/* Version 1 */}
-                {/* <Star width="25px" height="15px" className="absolute bottom-56 left-10 sm:w-[29px] sm:h-[29px] sm:bottom-[225px] sm:left-[115px]" fill="#F9DDB7" />
-                <Star width="25px" height="20px" className="absolute bottom-44 left-28 sm:w-[21px] sm:h-[21px] sm:bottom-[100px] sm:left-[380px]" />
-                <Star width="25px" height="23px" className="absolute bottom-[155px] right-32 sm:w-[20px] sm:h-[20px] sm:bottom-[120px] sm:right-[380px]" fill="#F9DDB7" />
-                <Star width="25px" height="24px" className="absolute bottom-52 right-9 sm:w-[31px] sm:h-[31px] sm:bottom-[215px] sm:right-[90px]" />
-                <img src={burger} alt="Cute Burger" className="absolute bottom-12 left-9 w-[28%] sm:bottom-[80px] sm:left-[170px] md:w-[14%] lg:w-[13%] " />
-                <img src={iceCream} alt="Cute Ice Cream" className="absolute bottom-0 right-9 w-[28%] sm:bottom-[80px] sm:right-[160px] md:w-[14%] lg:w-[12%]" /> */}
-
-                {/* <div className="min-h-[40vh] pt-5 w-full flex flex-col justify-start items-center 
-            sm:pt-0 sm:w-[45%] sm:h-full sm:items-start sm:justify-center overflow-hidden">
-            <img src={foodWheel} alt="Wheel of Food" className="w-[120%] h-[120]% max-w-none max-h-none sm:w-[170%] lg:w-[95%] object-cover" />
-            </div> */}
-
             </div >
         </div >
     )
