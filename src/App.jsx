@@ -11,7 +11,7 @@ import { Analytics } from "@vercel/analytics/react"
 function App() {
   const [countSpin, setCountSpin] = useState(0)
   const [isMsgVisible, setIsMsgVisible] = useState(false)
-  const [foodList, setFoodList] = useState('Nasi Goreng\nSoto\nBakso\nSate')
+  const [foodList, setFoodList] = useState('Nasi Goreng\nBurger\nSop Ayam\nSate')
 
   const handleFoodListChange = (e) => {
     setFoodList(e.target.value)
