@@ -1,8 +1,15 @@
-# React + Vite
+# Makan Apa Ya?
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple web-based app designed to help people decide what to eat by rotating a wheel of dish options they have added. The app also provides food recommendations to include on the wheel.
 
-Currently, two official plugins are available:
+This app was build with:
+* HTML
+* CSS
+* Javascript
+* React
+* Vite
+* Tailwindcss
+* [spin-wheel](https://github.com/CrazyTim/spin-wheel) package by CrazyTim
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
